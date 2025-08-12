@@ -1,4 +1,4 @@
-let kgroup = [
+let k_group = [
   {
     group: 'ive',
     name: ['안유진',
@@ -27,6 +27,8 @@ let kgroup = [
 
 ]
 
-console.log(kgroup)
-console.log(kgroup[])
+// 에스파 그룹의 팀원출력
+console.log(k_group[1].name)
+// 에스파 그룹의 인원수 출력
+console.log(k_group[1].count)
 
