@@ -98,3 +98,18 @@ for (let i in k_group) {
   }
 console.log(`${group} 멤버 : ${member}`);
 }
+
+// break : 현재의 블럭을 탈출
+// continue : 현재 아래 실행하지 않고 블럭 계속 진행
+// return : 함수를 빠져 나가는 것
+// do ~ while or while :
+// 1 ~ 10 까지 회전하면서, 5면 탈출
+
+number=1;
+do{
+  if(number==5) break;
+  console.log(number) ;
+  number++
+
+}while(number<11)
+
