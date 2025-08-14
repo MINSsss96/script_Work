@@ -86,3 +86,104 @@ console.log(`ive3 : ${ive3}`);
 
 let obj = {name : '아무개'};
 let obj2 = {...obj};
+
+
+// 8) join() 함수 : 원본 수정 하지 않는 함수
+// 배열 내 자료를 , 로 구분한 후 문자열로 반환
+// ive를 iveMembers로 카피
+console.log("=============================")
+console.log(`8) join() 함수`)
+let iveMembers =  [...ive];
+console.log(iveMembers.join())
+
+// 9) 정렬하기
+console.log("=============================")
+console.log(`9) 정렬하기 - sort() : 원본수정하기`)
+let sortIve = [...ive];
+// 숫자와 문자 모두 문자로 바꾸어서 utf-8로 비교
+sortIve.sort();
+console.log(sortIve.sort());
+
+
+console.log("=============================")
+console.log(`10) 역순정렬하기-reverse: 원본수정함.`)
+let reverseIve = [...ive];
+
+// 숫자와 문자 모두 문자로 바꾸어서 utf-8로 비교
+reverseIve.reverse();
+console.log(reverseIve);
+
+
+// 11) sort() 함수로 오름차순, 내림차순 정렬
+console.log("=============================")
+console.log(`11) sort Asc/Desc... (오름차순/내림차순)`)
+let numbers = [1,9,7,5,3, ];
+console.log(numbers);
+
+// numbers.sort();
+// console.log(numbers);
+
+// 오름차순 정렬
+// 반환값 규칙
+// 양수(1) : a가 b 뒤로 가야함
+// 음수(-1) : b가 a 뒤로 가야함
+// 0 : 현재 순서 유지
+numbers.sort((a,b)=> {
+  return a> b? 1: -1;
+})
+// 1, 9
+console.log(numbers)
+
+// 12) 배열 중 기준잡아서 정렬하기
+let k_group = [
+  {
+    group: 'ive',
+    name: ['안유진',
+      '장원영',
+'이서',
+],
+    count: 6,
+  },
+  {
+    group: '에스파',
+    name: ['카리나',
+      '윈터',
+      '닝닝',
+      '지젤',],
+    count: 4,
+  },
+  {
+    group: '케플러',
+    name: ['최유진',
+      '샤오팅',
+      '마시로',],
+    count: 9
+  }
+];
+console.log("=============================")
+console.log(`12) 그룹이름으로 오름차순 정렬하기`);
+console.log(k_group);
+// 그룹이름으로 오름차순 정렬하기
+let copyGroup = [...k_group];
+// console.log("=============================")
+// // 1. 아이브 -> ive
+// copyGroup[0].group = 'ive';
+// console.log(copyGroup);
+// // 아이브 그룹의 name 중 이서 -> 가을
+// console.log("=============================")
+// copyGroup[0].name[2] ='가을';
+// console.log(copyGroup);
+
+copyGroup.sort((a,b)=>{
+  return a.group > b.group ? 1 : -1;
+})
+
+console.log(copyGroup);
+
+console.log("=============================")
+console.log(`13) 그룹이름으로 내림차순 정렬하기`)
+let reverseGroup = [...k_group];
+reverseGroup.sort((a,b)=> {
+  return a.group<b.group ? 1: -1;
+})
+console.log(reverseGroup)
